@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cd23ceb8.css",
-    "main.js": "/static/js/main.98c2f245.js",
+    "main.css": "/static/css/main.130ec45d.css",
+    "main.js": "/static/js/main.d50ca2a8.js",
     "static/js/453.0a35478e.chunk.js": "/static/js/453.0a35478e.chunk.js",
     "static/media/IMG-20240730-WA0021.jpg": "/static/media/IMG-20240730-WA0021.5f83782f2d115bbddcaf.jpg",
     "static/media/IMG-20240730-WA0005.jpg": "/static/media/IMG-20240730-WA0005.cee297efb77b8f898307.jpg",
@@ -26,12 +26,12 @@
     "static/media/LogoTourKarimun.jpeg": "/static/media/LogoTourKarimun.88ef51553ee6c3741b34.jpeg",
     "static/media/Berpose di tulisan Love di bukit Love Karimunjawa.jpg": "/static/media/Berpose di tulisan Love di bukit Love Karimunjawa.2722c231efa436517f52.jpg",
     "index.html": "/index.html",
-    "main.cd23ceb8.css.map": "/static/css/main.cd23ceb8.css.map",
-    "main.98c2f245.js.map": "/static/js/main.98c2f245.js.map",
+    "main.130ec45d.css.map": "/static/css/main.130ec45d.css.map",
+    "main.d50ca2a8.js.map": "/static/js/main.d50ca2a8.js.map",
     "453.0a35478e.chunk.js.map": "/static/js/453.0a35478e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd23ceb8.css",
-    "static/js/main.98c2f245.js"
+    "static/css/main.130ec45d.css",
+    "static/js/main.d50ca2a8.js"
   ]
 }
