@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import Logo from '../../assets/images/LogoTourKarimun.jpeg'
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Offcanvas } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { MdCall } from 'react-icons/md';
@@ -50,31 +50,31 @@ function TopBar() {
         navigate(`/${currentLang}${path}`); // Menambahkan bahasa ke path URL
     };
 
-    const controlNavbar = () => {
+    const controlNavbar = useCallback(() => {
         const currentScrollY = window.scrollY;
 
-        // Menampilkan navbar jika scroll ke atas
-        if (currentScrollY < lastScrollY) {
-            setShowNavbar(true);
-        }
-        // Menyembunyikan navbar jika scroll ke bawah dan posisi sudah lebih dari 100px
-        else if (currentScrollY > lastScrollY && currentScrollY > 50) {
-            setShowNavbar(false);
-        }
+        setLastScrollY((prevScrollY) => {
+            // Menampilkan navbar jika scroll ke atas
+            if (currentScrollY < prevScrollY) {
+                setShowNavbar(true);
+            }
+            // Menyembunyikan navbar jika scroll ke bawah
+            else if (currentScrollY > prevScrollY && currentScrollY > 50) {
+                setShowNavbar(false);
+            }
 
-        // Update posisi scroll terakhir
-        setLastScrollY(currentScrollY);
-    };
+            return currentScrollY;
+        });
+    }, []);
 
     useEffect(() => {
-        // Menambahkan event listener saat komponen dimount
         window.addEventListener('scroll', controlNavbar);
 
-        // Membersihkan event listener saat komponen unmount
         return () => {
             window.removeEventListener('scroll', controlNavbar);
         };
-    }, [lastScrollY]);
+    }, [controlNavbar]);
+
     return (
         <Navbar expanded={expanded} onToggle={handleToggle} className={`!fixed top-0 w-full bg-white shadow-md transition-transform duration-300 z-50 ${showNavbar ? 'translate-y-0' : '-translate-y-full'
             }`} expand="lg" >
