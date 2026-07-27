@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import Logo from '../../assets/images/LogoTourKarimun.jpeg'
 import { useNavigate } from 'react-router-dom';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Offcanvas } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { MdCall } from 'react-icons/md';
@@ -14,7 +14,7 @@ function TopBar() {
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
     const [showNavbar, setShowNavbar] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const lastScrollY = useRef(0);
     const [isEnglish, setIsEnglish] = useState(false);
     const [expanded, setExpanded] = useState(false);
 
@@ -53,18 +53,13 @@ function TopBar() {
     const controlNavbar = useCallback(() => {
         const currentScrollY = window.scrollY;
 
-        setLastScrollY((prevScrollY) => {
-            // Menampilkan navbar jika scroll ke atas
-            if (currentScrollY < prevScrollY) {
-                setShowNavbar(true);
-            }
-            // Menyembunyikan navbar jika scroll ke bawah
-            else if (currentScrollY > prevScrollY && currentScrollY > 50) {
-                setShowNavbar(false);
-            }
+        if (currentScrollY < lastScrollY.current) {
+            setShowNavbar(true);
+        } else if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+            setShowNavbar(false);
+        }
 
-            return currentScrollY;
-        });
+        lastScrollY.current = currentScrollY;
     }, []);
 
     useEffect(() => {
