@@ -35,6 +35,14 @@ const Paket = () => {
             Navigasi: '/Paket/4D3N'
         }
     ];
+
+
+
+    // Fungsi untuk menavigasi ke halaman baru dengan bahasa saat ini
+    const navigateToPage = (path) => {
+        const currentLang = i18n.language; // Mendapatkan bahasa saat ini
+        navigate(`/${currentLang}${path}`); // Menambahkan bahasa ke path URL
+    };
     return (
         <div className="flex flex-col justify-center items-center w-screen -mb-16 text-Navy">
             <div className="flex flex-col justify-center items-center w-screen bg-gradient-to-t from-[#DCF4F4] to-white">
@@ -56,7 +64,7 @@ const Paket = () => {
                                         <Card.Text>
                                             {e.text}
                                         </Card.Text>
-                                        <Button onClick={() => { navigate(e.Navigasi) }} style={{ backgroundColor: 'white', color: 'blue', borderRadius: '3px', padding: '9px 22px', marginBottom: '10px' }}>{t('content.packageCardButton')}</Button>
+                                        <Button onClick={() => { navigateToPage(e.Navigasi) }} style={{ backgroundColor: 'white', color: 'blue', borderRadius: '3px', padding: '9px 22px', marginBottom: '10px' }}>{t('content.packageCardButton')}</Button>
                                     </Card.Body>
                                 </Card>
                             </div>

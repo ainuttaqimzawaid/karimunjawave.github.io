@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     return (
         <div className="bg-Navy w-screen text-white flex flex-col justify-center">
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-12 lg:px-20 py-12">

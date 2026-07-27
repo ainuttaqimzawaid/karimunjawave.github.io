@@ -6,7 +6,10 @@ import { useTranslation } from "react-i18next";
 
 
 const Service = () => {
-    const { t, i18n } = useTranslation();
+    const { t,
+        // i18n 
+    } = useTranslation();
+
     const Reason = [
         {
             Icon: <GiPalmTree />,

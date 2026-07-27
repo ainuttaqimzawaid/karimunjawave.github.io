@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://example.com/en/home</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://example.com/id/beranda" />
+    <lastmod>2024-08-28</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://example.com/id/beranda</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/home" />
+    <lastmod>2024-08-28</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!-- Tambahkan lebih banyak URL di sini -->
+</urlset>

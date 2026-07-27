@@ -13,7 +13,10 @@ import Image11 from '../../assets/images/image4.jpg'
 import { useTranslation } from "react-i18next"
 
 const Galery = () => {
-    const { t, i18n } = useTranslation();
+    const { t,
+        // i18n 
+    } = useTranslation();
+
     const Images1 = [
         Image1,
         Image2,

@@ -4,7 +4,10 @@ import { Navigation, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Testimonials = () => {
-    const { t, i18n } = useTranslation();
+    const { t,
+        // i18n 
+    } = useTranslation();
+
     const Testimoni = [
         {
             text: t('content.testimonialContent1'),

@@ -1,4 +1,4 @@
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import Bbq from '../../assets/images/images (12).jpeg'
 import Snorkling from '../../assets/images/images.jpeg'
 import Diving from '../../assets/images/Buzo.jpg'
@@ -13,7 +13,10 @@ import { useTranslation } from 'react-i18next';
 
 
 const Explore = () => {
-    const { t, i18n } = useTranslation();
+    const { t,
+        // i18n 
+    } = useTranslation();
+
     const swiperSlides = [
         {
             image: Snorkling,
